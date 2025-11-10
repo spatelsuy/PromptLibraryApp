@@ -186,7 +186,7 @@ export default function NewPrompt() {
             <textarea 
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              placeholder="Enter your prompt here... (e.g., Explain machine learning to a beginner in simple terms)"
+              placeholder={'Enter your prompt here... (e.g., Explain machine learning to a beginner in simple terms)'}
               rows="4"
               className="w-full p-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder-gray-400 text-gray-900"
             />
