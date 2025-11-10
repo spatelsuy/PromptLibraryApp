@@ -68,63 +68,60 @@ export default function NewPrompt() {
     }
   };
 
-
-const handleSavePrompt = async () => {
-  if (!topic.trim() || !prompt.trim()) {
-    alert('Please fill in both topic and prompt fields');
-    return;
-  }
-  
-  setLoadingSavePrompt(true);
-  try {
-    // Call the backend API to save the prompt
-	const response = await fetch('https://promptdbservice.onrender.com/api/db/saveNewPrompt', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			category: category,
-			title: topic,
-			content: prompt,
-			description: description || `Prompt about ${topic}`,
-			created_by: 'user',
-			metadata: {
-				topic: topic,
-				category: category,
-				tags: []
-			}
-		}),
-	});	
-	
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to save prompt');
+  const handleSavePrompt = async () => {
+    if (!topic.trim() || !prompt.trim()) {
+      alert('Please fill in both topic and prompt fields');
+      return;
     }
-
-    const result = await response.json();
     
-    // Success! Show message and reset form
-    alert('Prompt saved successfully!');
-    console.log('Prompt saved:', result.prompt);
-    
-    // Reset the form
-    setTopic('');
-    setPrompt('');
-    setImprovedData(null);
-    
-    // Optional: Redirect to prompts list or show success message
-    // window.location.href = '/'; // Uncomment to redirect to main page
+    setLoadingSavePrompt(true);
+    try {
+      // Call the backend API to save the prompt
+      const response = await fetch('https://promptdbservice.onrender.com/api/db/saveNewPrompt', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          category: category,
+          title: topic,
+          content: prompt,
+          description: description || `Prompt about ${topic}`,
+          created_by: 'user',
+          metadata: {
+            topic: topic,
+            category: category,
+            tags: []
+          }
+        }),
+      });	
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to save prompt');
+      }
 
-  } catch (error) {
-    console.error('Error saving prompt:', error);
-    alert(`Failed to save prompt: ${error.message}`);
-  } finally {
-    setLoadingSavePrompt(false);
-  }
-};
+      const result = await response.json();
+      
+      // Success! Show message and reset form
+      alert('Prompt saved successfully!');
+      console.log('Prompt saved:', result.prompt);
+      
+      // Reset the form
+      setTopic('');
+      setPrompt('');
+      setImprovedData(null);
+      
+      // Optional: Redirect to prompts list or show success message
+      // window.location.href = '/'; // Uncomment to redirect to main page
 
-
+    } catch (error) {
+      console.error('Error saving prompt:', error);
+      alert(`Failed to save prompt: ${error.message}`);
+    } finally {
+      setLoadingSavePrompt(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -143,10 +140,12 @@ const handleSavePrompt = async () => {
         {/* Main Form */}
         <div className="bg-white rounded-lg shadow-sm border p-6 space-y-6">
 		
-          {/* Categoty Input */}
+          {/* Category Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
-            <input type="text" value={category}
+            <input 
+              type="text" 
+              value={category}
               onChange={(e) => setCategory(e.target.value)}
               placeholder="Enter a category for your prompt (e.g., Machine Learning, Resume Writing, etc.)"
               className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 text-gray-900"
@@ -156,29 +155,36 @@ const handleSavePrompt = async () => {
           {/* Topic Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Topic *</label>
-            <input type="text" value={topic}
+            <input 
+              type="text" 
+              value={topic}
               onChange={(e) => setTopic(e.target.value)}
               placeholder="Enter a topic for your prompt (e.g., Machine Learning, Resume Writing, etc.)"
               className="w-full p-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 text-gray-900"
             />
           </div>
 
-          {/* Desctiption Textarea */}
+          {/* Description Textarea */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Description (Character count: {description.length} )</label> 
-            <textarea value={description}
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Description (Character count: {description.length})
+            </label> 
+            <textarea 
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Enter your prompt here... (e.g., Explain machine learning to a beginner in simple terms)"
+              placeholder="Enter your prompt description here..."
               rows="2"
               className="w-full p-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder-gray-400 text-gray-900"
             />
           </div>
 
-
           {/* Prompt Textarea */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Prompt * (Character count: {prompt.length} )</label> 
-            <textarea value={prompt}
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Prompt * (Character count: {prompt.length})
+            </label> 
+            <textarea 
+              value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="Enter your prompt here... (e.g., Explain machine learning to a beginner in simple terms)"
               rows="4"
@@ -202,15 +208,20 @@ const handleSavePrompt = async () => {
                 <h4 className="font-medium text-green-700 mb-2">Improvements Made:</h4>
                 <div className="flex flex-wrap gap-2">
                   {improvedData.suggestions.map((suggestion, index) => (
-                    <span key={index} className="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full" >
+                    <span 
+                      key={index} 
+                      className="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                    >
                       {suggestion}
                     </span>
                   ))}
                 </div>
               </div>
               
-              <button onClick={handleUseImprovedPrompt}
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+              <button 
+                onClick={handleUseImprovedPrompt}
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+              >
                 Use This Improved Prompt
               </button>
             </div>
@@ -260,11 +271,11 @@ const handleSavePrompt = async () => {
             💡 Tips for Better Prompts
           </h3>
           <ul className="text-sm text-blue-700 space-y-2">
-            <li>• <strong>Be specific:</strong> Instead of "Explain AI", try "Explain artificial intelligence to a 10-year-old using simple analogies"</li>
+            <li>• <strong>Be specific:</strong> Instead of &quot;Explain AI&quot;, try &quot;Explain artificial intelligence to a 10-year-old using simple analogies&quot;</li>
             <li>• <strong>Provide context:</strong> Mention the audience, purpose, and desired format</li>
             <li>• <strong>Set constraints:</strong> Specify length, style, or any limitations</li>
-            <li>• <strong>Use examples:</strong> Show what kind of response you're looking for</li>
-            <li>• <strong>Iterate:</strong> Use the "Improve" button to refine your prompt</li>
+            <li>• <strong>Use examples:</strong> Show what kind of response you&apos;re looking for</li>
+            <li>• <strong>Iterate:</strong> Use the &quot;Improve&quot; button to refine your prompt</li>
           </ul>
         </div>
 
