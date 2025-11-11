@@ -23,19 +23,11 @@ export default function RootLayout({ children }) {
 
                 {/* Navigation Menu */}
                 <div className="hidden md:block">
-                  <div className="flex-shrink-0">
-                    <Link href="/" className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-xl font-medium transition-colors">
-                      My Prompts
-                    </Link>
-                    <Link href="/about" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-xl font-medium transition-colors">
-                      About Prompts
-                    </Link>
-                    <Link href="/new-prompt" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-xl font-medium transition-colors">
-                      New Prompt
-                    </Link>
-                    <Link href="/settings" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-xl font-medium transition-colors">
-                      Settings
-                    </Link>
+                  <div className="ml-10 flex items-baseline space-x-4">
+                    <Link href="/" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">My Prompts</Link>
+                    <Link href="/about" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">About Prompts</Link>
+                    <Link href="/new-prompt" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">New Prompt</Link>
+                    <Link href="/settings" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">Settings</Link>
                   </div>
                 </div>
 
