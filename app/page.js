@@ -450,11 +450,6 @@ export default function PromptsPage() {
                                       </span>
                                     )}
                                   </div>
-                                  <div className="flex items-center space-x-4 text-sm text-gray-500">
-                                    <span>Created {formatDate(prompt.created_at)}</span>
-                                    <span>•</span>
-                                    <span className="capitalize bg-gray-100 px-2 py-1 rounded-md">{prompt.category}</span>
-                                  </div>
                                 </div>
                                 <button className="p-2 hover:bg-gray-200 rounded-lg transition-colors text-gray-400 hover:text-gray-600 ml-4">
                                   {isPromptExpanded ? '▼' : '►'}
@@ -501,29 +496,39 @@ export default function PromptsPage() {
 
                                 {/* Version and Actions - AT THE BOTTOM */}
                                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                                  <div className="flex items-center space-x-4">
-                                    <label className="text-sm font-medium text-gray-700">Select Version:</label>
-                                    <select 
-                                      value={selectedVersionId || ''}
-                                      onChange={(e) => handleVersionSelect(prompt.prompt_id, e.target.value)}
-                                      className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-                                      disabled={versions.length === 0 || isEditing}
-                                    >
-                                      {versions.length === 0 ? (
-                                        <option className="text-gray-900">Loading versions...</option>
-                                      ) : (
-                                        versions.map(version => (
-                                          <option 
-                                            key={version.version_id} 
-                                            value={version.version_id}
-                                            className="text-gray-900"
-                                          >
-                                            v{version.version_number} - {formatDate(version.created_at)}
-                                            {version.is_active && ' (Active)'}
-                                          </option>
-                                        ))
-                                      )}
-                                    </select>
+                                  <div className="flex items-center space-x-6">
+                                    {/* Created date and Category */}
+                                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                      <span>Created {formatDate(prompt.created_at)}</span>
+                                      <span>•</span>
+                                      <span className="capitalize bg-gray-100 px-2 py-1 rounded-md">{prompt.category}</span>
+                                    </div>
+                                    
+                                    {/* Version Dropdown */}
+                                    <div className="flex items-center space-x-4">
+                                      <label className="text-sm font-medium text-gray-700">Select Version:</label>
+                                      <select 
+                                        value={selectedVersionId || ''}
+                                        onChange={(e) => handleVersionSelect(prompt.prompt_id, e.target.value)}
+                                        className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
+                                        disabled={versions.length === 0 || isEditing}
+                                      >
+                                        {versions.length === 0 ? (
+                                          <option className="text-gray-900">Loading versions...</option>
+                                        ) : (
+                                          versions.map(version => (
+                                            <option 
+                                              key={version.version_id} 
+                                              value={version.version_id}
+                                              className="text-gray-900"
+                                            >
+                                              v{version.version_number} - {formatDate(version.created_at)}
+                                              {version.is_active && ' (Active)'}
+                                            </option>
+                                          ))
+                                        )}
+                                      </select>
+                                    </div>
                                   </div>
                                   
                                   {/* Contextual Action Buttons */}
