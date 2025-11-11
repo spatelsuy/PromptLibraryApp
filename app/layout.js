@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
               <div className="flex justify-between items-center h-16">
                 {/* Logo/Brand */}
                 <div className="flex-shrink-0">
-                  <h1 className="text-xl font-bold text-gray-900">Prompt Management</h1>
-                  <p className="text-sm text-gray-600">Manage and edit your AI prompts</p>
+                  <h1 className="text-xl font-bold text-gray-900">Prompt Library</h1>
+                  <p className="text-sm text-gray-600">Manage and organize your AI prompts with version control</p>
                 </div>
 
                 {/* Navigation Menu */}
