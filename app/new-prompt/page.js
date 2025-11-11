@@ -264,21 +264,6 @@ export default function NewPrompt() {
             </button>
           </div>
         </div>
-
-        {/* Tips Section */}
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-3">
-            💡 Tips for Better Prompts
-          </h3>
-          <ul className="text-sm text-blue-700 space-y-2">
-            <li>• <strong>Be specific:</strong> Instead of &quot;Explain AI&quot;, try &quot;Explain artificial intelligence to a 10-year-old using simple analogies&quot;</li>
-            <li>• <strong>Provide context:</strong> Mention the audience, purpose, and desired format</li>
-            <li>• <strong>Set constraints:</strong> Specify length, style, or any limitations</li>
-            <li>• <strong>Use examples:</strong> Show what kind of response you&apos;re looking for</li>
-            <li>• <strong>Iterate:</strong> Use the &quot;Improve&quot; button to refine your prompt</li>
-          </ul>
-        </div>
-
       </div>
     </div>
   );
