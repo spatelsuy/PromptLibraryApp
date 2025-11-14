@@ -84,7 +84,11 @@ export default function NewPrompt() {
     }	  
   };
 
-
+	const handleTheResponsePrompt = () => {
+    	setResponseTestData(null); // Hide the improvement section after use
+  	}
+  };
+	
   const handleSavePrompt = async () => {
     if (!topic.trim() || !prompt.trim()) {
       alert('Please fill in both topic and prompt fields');
@@ -227,6 +231,7 @@ export default function NewPrompt() {
               <div className="bg-white rounded p-4 border mb-3">
                 <p className="text-gray-800 whitespace-pre-wrap">{responseTestData.generatedText}</p>
               </div>
+			  <button onClick={handleTheResponsePrompt} className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Thanks, I liked it.</button>	
             </div>
           )}
 	
