@@ -86,8 +86,7 @@ export default function NewPrompt() {
 
 	const handleTheResponsePrompt = () => {
     	setResponseTestData(null); // Hide the improvement section after use
-  	}
-  };
+	};
 	
   const handleSavePrompt = async () => {
     if (!topic.trim() || !prompt.trim()) {
