@@ -34,7 +34,7 @@ export default function NewPrompt() {
 	const fetchCategories = async () => {
 		setLoadingCategories(true);
 		try {
-			const response = await fetch('http://localhost:5000/api/db/getCategories');
+			const response = await fetch('https://promptdbservice.onrender.com/api/db/getCategories');
 			const data = await response.json();
 			if(data.success){
 				setAvailableCategories(data.categories);
