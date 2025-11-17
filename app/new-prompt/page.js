@@ -256,7 +256,7 @@ return (
       <div className="bg-white rounded-lg shadow-sm border p-6 space-y-6">
          {/* Category Input */}
 		<div>
-		  <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+		  <label className="block text-sm font-medium text-gray-700 mb-2">Category *</label>
 		  <select 
 			value={category}
 			onChange={(e) => setCategory(e.target.value)}
