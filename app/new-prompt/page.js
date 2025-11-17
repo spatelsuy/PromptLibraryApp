@@ -21,19 +21,43 @@ export default function NewPrompt() {
 
 	const [availableProviders, setAvailableProviders] = useState([]);
 	const [loadingProviders, setLoadingProviders] = useState(false);
+	
+	const [availableCategories, setAvailableCategories] = useState([]);
+	const [loadingCategories, setLoadingCategories] = useState(false);
   
 	useEffect(() => {
 		fetchProviders();
+		fetchCategories();
 	},[]);
+
+// Add this function to fetch providers
+	const fetchCategories = async () => {
+		setLoadingCategories(true);
+		try {
+			const response = await fetch('http://localhost:5000/api/db/getCategories');
+			const data = await response.json();
+			if(data.success){
+				setAvailableCategories(data.categories);
+			} else {
+				console.error('Failed to fetch categories');
+			}
+		} catch(error){
+			console.error('Error fetching categories:', error);
+		} finally {
+			setLoadingCategories(false);
+		}
+	};
   
 	// Add this function to fetch providers
 	const fetchProviders = async () => {
 	  setLoadingProviders(true);
 	  try {
-		  const response = await fetch('https://promptdbservice.onrender.com/api/db/getAllProviders');
-		  const data = await response.json();
+		const response = await fetch('https://promptdbservice.onrender.com/api/db/getAllProviders');
+		const data = await response.json();
+		
 		if (data.success) {
 		  setAvailableProviders(data.providers);
+		  //alert(data.providers);
 		} else {
 		  console.error('Failed to fetch providers');
 		  // Optional: fallback to hardcoded providers
@@ -41,14 +65,16 @@ export default function NewPrompt() {
 	  } catch (error) {
 		console.error('Error fetching providers:', error);
 	  } finally {
-		  setLoadingProviders(false);
+		setLoadingProviders(false);
 	  }
 	};
-	
+  
+
 	const handleImprovePrompt = async () => {
 		if (!prompt.trim()) return;
 		setLoadingImprovement(true);
 		setImprovedData(null);
+
 		try {
 		const response = await fetch('https://promptdbservice.onrender.com/api/ai/format-prompt', {
 			method: 'POST',
@@ -59,11 +85,14 @@ export default function NewPrompt() {
 				prompt: prompt
 			}),
 		});
-		if (!response.ok) {
+	
+		  if (!response.ok) {
 			throw new Error('Failed to improve prompt');
-		}
-		const data = await response.json();
-			setImprovedData(data);
+		  }
+			
+		  const data = await response.json();
+		  setImprovedData(data);
+		  
 		} catch (error) {
 		  console.error('Error improving prompt:', error);
 		  alert('Failed to improve prompt. Please try again.');
@@ -226,15 +255,21 @@ return (
       {/* Main Form */}
       <div className="bg-white rounded-lg shadow-sm border p-6 space-y-6">
          {/* Category Input */}
-         <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
-            <input 
-               type="text" 
-               value={category}
-               onChange={(e) => setCategory(e.target.value)}
-            placeholder="Enter a category for your prompt (e.g., Machine Learning, Resume Writing, etc.)"
-            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 text-gray-900"/>
-         </div>
+		<div>
+		  <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+		  <select 
+			value={category}
+			onChange={(e) => setCategory(e.target.value)}
+			className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
+		  >
+			<option value="">Select a category</option>
+			{availableCategories && availableCategories.map((cat) => (
+			  <option key={cat.category_name} value={cat.category_name}>
+				{cat.category_name}
+			  </option>
+			))}
+		  </select>
+		</div>
          {/* Topic Input */}
          <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Topic *</label>
