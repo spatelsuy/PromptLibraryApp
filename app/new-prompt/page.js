@@ -235,7 +235,7 @@ export default function NewPrompt() {
 		  setTopic('');
 		  setPrompt('');
 		  setDescription('');
-		  setCategoty('');
+		  setCategory('');
 		  setImprovedData(null);
 		  
 		} catch (error) {
