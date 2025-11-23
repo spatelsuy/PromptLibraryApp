@@ -197,8 +197,8 @@ export default function NewPrompt() {
   };
 	
 	const handleSavePrompt = async () => {
-		if (!topic.trim() || !prompt.trim()) {
-			alert('Please fill in both topic and prompt fields');
+		if (!topic.trim() || !prompt.trim() || !description.trim() || !category.trim()) {
+			alert('Please fill mandatory fields');
 			return;
 		}
     
@@ -234,6 +234,8 @@ export default function NewPrompt() {
 		  
 		  setTopic('');
 		  setPrompt('');
+		  setDescription('');
+		  setCategoty('');
 		  setImprovedData(null);
 		  
 		} catch (error) {
@@ -446,7 +448,7 @@ return (
             className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-semibold py-2 rounded-lg transition-colors">
             Test Prompt in Free Gen API
             </button>
-            <button onClick={handleSavePrompt} disabled={loading || !topic.trim() || !prompt.trim()}
+            <button onClick={handleSavePrompt} disabled={loading || !topic.trim() || !prompt.trim() || !category.trim() || || !description.trim()}
             className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white font-semibold py-2 rounded-lg transition-colors">
             {loading ? 'Saving...' : 'Save Prompt'}</button>
          </div>
