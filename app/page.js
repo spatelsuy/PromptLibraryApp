@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-screen flex flex-col bg-gray-50 p-6">
       <div className="max-w-2xl text-center">
         <h1 className="text-4xl text-gray-600 font-bold mb-4">Prompt Library</h1>
         <p className="text-lg text-gray-700 mb-6">A simple, structured space to store, organize, version, and reuse your AI prompts. Built with React, Node.js, Supabase, and vibe coding.</p>
