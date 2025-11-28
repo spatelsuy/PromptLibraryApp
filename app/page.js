@@ -5,14 +5,12 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
       <div className="max-w-2xl text-center">
         <h1 className="text-4xl font-bold text-gray-600 mb-4">Welcome to Prompt Librar</h1>
-        <p className="text-lg text-gray-700 mb-6">Your centralized hub for building, storing, and managing AI prompts.<br>
-        Whether you are experimenting, refining, or building production workflows, Prompt Library helps you keep everything organized and versioned, so you never lose track of your best ideas.<br>
-        Add new prompts, revisit older versions, and browse your prompt collection - all in one simple interface.
+        <p className="text-lg text-gray-700 mb-6">
+        Your centralized hub for building, storing, and managing AI prompts.<br />
+        Whether you are experimenting, refining, or building production workflows, Prompt Library helps you keep everything organized and versioned, so you never lose track of your best ideas.<br />
+        Add new prompts, revisit older versions, and browse your prompt collection — all in one simple interface.
         </p>
-        <a
-          href="/library"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition"
-        >
+        <a href="/library" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition">
           Open Prompt Library
         </a>
 
