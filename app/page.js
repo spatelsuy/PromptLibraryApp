@@ -6,13 +6,7 @@ export default function HomePage() {
       <div className="max-w-2xl text-center">
         <h1 className="text-4xl font-bold mb-4">Prompt Library</h1>
         <p className="text-lg text-gray-700 mb-6">
-          Welcome to Prompt Library — your centralized hub for building, storing, and managing AI prompts.
-        </p>
-        <p className="text-lg text-gray-700 mb-6">
-          Whether you're experimenting, refining, or creating production workflows, Prompt Library keeps your prompts organized and versioned so you never lose track of your best ideas.
-        </p>
-        <p className="text-lg text-gray-700 mb-6">
-          Add new prompts, revisit older versions, and browse your growing prompt collection — all in one clean, simple interface.
+          A simple, structured space to store, organize, version, and reuse your AI prompts. Built with React, Node.js, Supabase, and vibe coding.
         </p>
 
         <a
