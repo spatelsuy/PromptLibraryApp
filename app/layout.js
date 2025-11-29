@@ -1,5 +1,7 @@
 import './globals.css';
 import Link from 'next/link'; // Add this import
+import { SessionProvider } from "next-auth/react";
+import AuthButton from "@/components/AuthButton";
 
 export const metadata = {
   title: 'Prompt Management and Library',
@@ -70,6 +72,8 @@ export default function RootLayout({ children }) {
                 <Link href="/settings" className="text-gray-600 block px-3 py-2 rounded-md text-base font-medium">
                   Settings
                 </Link>
+                {/* Login / Logout */}
+                <AuthButton />
               </div>
             </div>
           </nav>
