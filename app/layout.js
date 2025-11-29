@@ -1,7 +1,7 @@
 import './globals.css';
 import Link from 'next/link'; // Add this import
 import { SessionProvider } from "next-auth/react";
-import AuthButton from "@/components/AuthButton";
+import AuthButton from "./components/AuthButton";
 
 export const metadata = {
   title: 'Prompt Management and Library',
