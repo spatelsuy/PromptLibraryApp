@@ -1,17 +1,16 @@
+"use client"; // make this a client component
+
 import './globals.css';
 import Link from 'next/link'; // Add this import
 import { SessionProvider } from "next-auth/react";
 import AuthButton from "./components/AuthButton";
-
-export const metadata = {
-  title: 'Prompt Management and Library',
-  description: 'Manage and edit your AI prompts',
-}
+import ShowGoogleID from "./components/ShowGoogleID";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+	  <SessionProvider>
         <div className="min-h-screen bg-gray-50">
           {/* Navigation Header */}
           <nav className="bg-white shadow-sm border-b">
@@ -31,6 +30,8 @@ export default function RootLayout({ children }) {
                     <Link href="/about" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">About Prompts</Link>
                     <Link href="/new-prompt" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">New Prompt</Link>
                     <Link href="/settings" className="text-gray-900 hover:text-blue-600 rounded-md text-md font-bold transition-colors">Settings</Link>
+					<AuthButton />
+					<ShowGoogleID />
                   </div>
                 </div>
 
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
           {/* Main Content */}
           <main>{children}</main>
         </div>
+		</SessionProvider>
       </body>
     </html>
   );
