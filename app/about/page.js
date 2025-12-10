@@ -1,6 +1,6 @@
 export default function AboutPrompts() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="max-w-4xl mx-auto px-6 py-12 text-gray-900">
       <h1 className="text-4xl font-bold mb-6">About Prompts — A Simple Guide</h1>
 
       {/* What is a Prompt */}
