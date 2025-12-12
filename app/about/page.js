@@ -8,8 +8,7 @@ export default function AboutPrompts() {
         <h3 className="text-2xl font-semibold mb-3">What is a Prompt?</h3>
         <p className="mb-3">
           A prompt is the instruction you give to an AI tool. It can be a question, a task, or a message that tells the AI what you want. 
-          Think of it like giving directions to a GPS, asking a friend for help, or setting expectations before a task.
-          A clear prompt gives clear results. A vague prompt gives vague results.
+          Think of it like asking a friend for help, or setting expectations before a task. A clear prompt gives clear results. A vague prompt gives vague results.
         </p>
       </section>
 
@@ -33,10 +32,10 @@ export default function AboutPrompts() {
         <p className="mb-3">A good prompt usually contains:</p>
 
         <ul className="list-disc ml-6 space-y-2">
-          <li><strong>Role:</strong> “Act as a cybersecurity analyst…”</li>
-          <li><strong>Goal:</strong> “Help me evaluate risks…”</li>
+          <li><strong>Role:</strong> For example, “Act as a cybersecurity analyst...”</li>
+          <li><strong>Goal:</strong> “Help me evaluate risks...”</li>
           <li><strong>Context:</strong> Information the AI needs.</li>
-          <li><strong>Constraints:</strong> “Keep it under 150 words.”</li>
+          <li><strong>Constraints:</strong> For example, “Keep it under 150 words.”</li>
           <li><strong>Output format:</strong> Bullets, table, summary, etc.</li>
         </ul>
       </section>
