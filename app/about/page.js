@@ -47,14 +47,27 @@ export default function AboutPrompts() {
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold">1. Zero-Shot Prompt</h3>
-            <p><strong>Simple Definition:</strong>A Zero-Shot Prompt is when you ask an AI to do a task without giving any examples or prior training. It is just a clear instructions.</p>
+            <p>Zero-Shot Prompt is when you ask an AI to do a task without giving any examples or prior training. It is just a clear instructions.</p>
             <p>Example 1: Explain OAuth2.</p>
             <p>Example 2: Rewrite the paragraph below in a professional and empathetic tone suitable for a customer success manager.</p>
           </div>
 
           <div>
             <h3 className="text-xl font-semibold">2. Few-Shot Prompt</h3>
-            <p>You provide examples and ask the AI to follow them. Great for tone and style.</p>
+            <p>Few-Shot Prompting is when you provide a small number of examples in the prompt to demonstrate the expected input-output pattern, and then ask the model to perform the require task.</p>
+            <p>Rewrite the following messages in a professional tone. < /br>
+
+            Example 1:< /br>
+            Input: "This is wrong. Fix it."< /br>
+            Output: "There appears to be an issue. Could you please review and correct it?"< /br>
+            < /br>
+            Example 2:< /br>
+            Input: "I need this now."< /br>
+            Output: "Could you please prioritize this request at your earliest convenience?"< /br>
+            < /br>
+            Now rewrite this:< /br>
+            Input: "Send the document today."< /br>
+            </p>
           </div>
 
           <div>
