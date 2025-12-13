@@ -68,11 +68,16 @@ export default function AboutPrompts() {
             Now rewrite this:<br />
             Input: Send the document today.<br />
             </p>
+
+            <p>Note: Zero-Shot relies on instruction clarity; Few-Shot relies on example-driven guidance.</p>
           </div>
 
           <div>
             <h3 className="text-xl font-semibold">3. Instruction Prompt</h3>
-            <p>You give step-by-step instructions. Example: “Summarize in 5 bullets and highlight risks.”</p>
+            <p>An Instruction Prompt is a prompt where you clearly tell the AI what to do and how to respond, by explicitely providing instructions.</p>
+            <p>Explain Kubernetes to a non-technical person. Use bullet points only to explain. Limit the answer to 5 bullets. Avoid technical jargon.</p>
+            <p>What is the difference between zero-shot and instruction prompt? <br />If you use zero-shot prompt concept, the above example will look like &quotExplain Kubernetes&quot. 
+              When you add clarity to your question by telling &quotnon-technical person&quot, usage of bullet points and limiting it to 5, avoiding technical jargon, the prompt becomes instruction prompt</p>
           </div>
 
           <div>
