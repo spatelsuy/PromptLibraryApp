@@ -112,7 +112,17 @@ export default function AboutPrompts() {
 
           <div>
             <h3 className="text-xl font-semibold">6. Rewrite / Transform Prompt</h3>
-            <p>Ask the AI to improve or change something. Example: “Make this text more professional.”</p>
+            <p>A Rewrite / Transform Prompt is a prompt where you explicitly ask the AI to change, reformat, or modify the input content according to a rule, style, or purpose.<br />
+            - The AI does not generate new content from scratch, but transforms existing content.<br />
+            - Can include instructions for tone, format, style, or constraints.<br />
+            - Can also be combined with Zero-Shot, Few-Shot, Role-Based, or CoT.<br />
+            Example: Rewrite this sentence in a more professional tone: I need this done now.<br />
+            Note:<br />
+              Role-Based + Instruction + Transform: Act as a project manager. Rewrite the following message to sound polite and professional: Send me the report today.<br />
+              Few-Shot + Transform: Example 1: I need this done now. is written as Could you please prioritize this task at your earliest convenience?  <br />
+              Example 2: Send me the report today. is written as Could you please send me the report today?<br />
+              Now rewrite: Finish the project by Friday.
+            </p>
           </div>
         </div>
       </section>
