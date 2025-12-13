@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 
 export default function NewPrompt() {
 	const [topic, setTopic] = useState('');
@@ -207,7 +208,8 @@ export default function NewPrompt() {
 		  const response = await fetch('https://promptdbservice.onrender.com/api/db/saveNewPrompt', {
 			method: 'POST',
 			headers: {
-			  'Content-Type': 'application/json',
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${session.idToken}` // send ID token for backend auth
 			},
 			body: JSON.stringify({
 			  category: category,
