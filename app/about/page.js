@@ -93,7 +93,21 @@ export default function AboutPrompts() {
 
           <div>
             <h3 className="text-xl font-semibold">5. Chain-of-Thought Prompt</h3>
-            <p>Ask the AI to explain its reasoning. Useful for analysis and complex decisions.</p>
+            <p>A Chain-of-Thought (CoT) Prompt is a prompt where you explicitly ask the AI to reason step-by-step and show its intermediate thinking before providing the final answer.</p>
+            <p>Example: Solve the math problem step by step: If a train travels 60 km in 1 hour and 90 km in 1.5 hours, what is its average speed? Show all calculations.</p>
+            <p>Note with another example:<br />
+            Zero-Shot + CoT: Solve this math problem step by step: 24 × 36<br />
+            Can be Instruction + CoT: Explain the solution to 24 × 36 step by step and show all intermediate calculations.<br />
+            Can be Role-Based + CoT: Act as a math tutor. Solve 24 × 36 step by step and explain each step clearly.<br />
+            Can be Role-Based + Few-Shot + CoT: Act as a math tutor. Solve 24 × 36 and explain each step clearly. <br />
+              Follow the example: Problem: 12 × 15<br />
+              Step-by-step solution:<br />
+              1. Break 15 into 10 + 5<br />
+              2. Multiply 12 by 10 → 120<br />
+              3. Multiply 12 by 5 → 60<br />
+              4. Add the results → 120 + 60 = 180<br />
+              Answer: 180
+            </p>
           </div>
 
           <div>
