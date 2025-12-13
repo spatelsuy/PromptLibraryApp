@@ -55,18 +55,18 @@ export default function AboutPrompts() {
           <div>
             <h3 className="text-xl font-semibold">2. Few-Shot Prompt</h3>
             <p>Few-Shot Prompting is when you provide a small number of examples in the prompt to demonstrate the expected input-output pattern, and then ask the model to perform the require task.</p>
-            <p>Rewrite the following messages in a professional tone. < /br>
+            <p>Rewrite the following messages in a professional tone. <br />
 
-            Example 1:< /br>
-            Input: "This is wrong. Fix it."< /br>
-            Output: "There appears to be an issue. Could you please review and correct it?"< /br>
-            < /br>
-            Example 2:< /br>
-            Input: "I need this now."< /br>
-            Output: "Could you please prioritize this request at your earliest convenience?"< /br>
-            < /br>
-            Now rewrite this:< /br>
-            Input: "Send the document today."< /br>
+            Example 1:<br />
+            Input: "This is wrong. Fix it."<br />
+            Output: "There appears to be an issue. Could you please review and correct it?"<br />
+            <br />
+            Example 2:<br />
+            Input: "I need this now."<br />
+            Output: "Could you please prioritize this request at your earliest convenience?"<br />
+            <br />
+            Now rewrite this:<br />
+            Input: "Send the document today."<br />
             </p>
           </div>
 
