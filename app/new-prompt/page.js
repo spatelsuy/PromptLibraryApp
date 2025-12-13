@@ -199,6 +199,10 @@ export default function NewPrompt() {
   };
 	
 	const handleSavePrompt = async () => {
+		if(!session){
+			alert("Please login");
+			return;
+		}
 		if (!topic.trim() || !prompt.trim() || !description.trim() || !category.trim()) {
 			alert('Please fill mandatory fields');
 			return;
