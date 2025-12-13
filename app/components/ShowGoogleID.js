@@ -9,7 +9,8 @@ export default function ShowGoogleID() {
 
   return (
     <div>
-      <p className="text-gray-900">Welcome {session.user.name}</p>
+      <p className="text-gray-900">Welcome {session.user.email}</p>
     </div>
   );
 }
+
