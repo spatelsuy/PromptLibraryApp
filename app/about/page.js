@@ -76,9 +76,9 @@ export default function AboutPrompts() {
             <h3 className="text-xl font-semibold">3. Instruction Prompt</h3>
             <p>An Instruction Prompt is a prompt where you clearly tell the AI what to do and how to respond, by explicitely providing instructions.</p>
             <p>Explain Kubernetes to a non-technical person. Use bullet points only to explain. Limit the answer to 5 bullets. Avoid technical jargon.</p>
-            <p>Using the Zero-Shot concept, the prompt would be: Explain Kubernetes.
-            When you add clarity by specifying the audience (non-technical), format (bullet points), limit (5 bullets), and style (avoid technical jargon), 
-              the prompt becomes an Instruction Prompt - it’s still Zero-Shot, but now it includes explicit guidance.</p>
+            <p>Note: Using the Zero-Shot concept, the prompt would be: Explain Kubernetes.
+            When you add clarity by specifying the audience (non-technical person), format (bullet points), limit (5 bullets), and style (avoid technical jargon), 
+              the prompt becomes an Instruction Prompt - it’s still Zero-Shot, but now it provides explicit instruction.</p>
           </div>
 
           <div>
