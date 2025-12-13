@@ -125,6 +125,16 @@ export default function AboutPrompts() {
             </p>
           </div>
         </div>
+
+        <div>
+              <p>
+              we’ve covered six key prompt types: Zero-Shot, Few-Shot, Instruction, Role-Based, Chain-of-Thought, and Rewrite/Transform. 
+              Mastering these will give you a strong foundation for working effectively with AI. 
+              Beyond these, there are several advanced techniques, such as multi-turn, system-level, and self-consistency prompts, which can make AI interactions even smarter. 
+              I encourage you to explore these additional prompt types on your own, experiment with them, and see how they can enhance your outputs. 
+              The world of prompting is constantly evolving, so practice, and discover new ways to interact with AI.
+              </p>
+        </div>
       </section>
 
       {/* How to Improve */}
