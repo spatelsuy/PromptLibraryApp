@@ -48,8 +48,8 @@ export default function AboutPrompts() {
           <div>
             <h3 className="text-xl font-semibold">1. Zero-Shot Prompt</h3>
             <p><strong>Simple Definition:</strong>A Zero-Shot Prompt is when you ask an AI to do a task without giving any examples or prior training. It is just a clear instructions.</p>
-            <p>Example 1: Ask the AI to do something without examples. Example: “Explain OAuth2 simply.”</p>
-            <p>Example 2: Rewrite the paragraph below in a professional and empathetic tone suitable for a customer success manager.</p?
+            <p>Example 1: Explain OAuth2.</p>
+            <p>Example 2: Rewrite the paragraph below in a professional and empathetic tone suitable for a customer success manager.</p>
           </div>
 
           <div>
