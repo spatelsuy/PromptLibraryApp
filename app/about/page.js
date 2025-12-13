@@ -125,7 +125,7 @@ export default function AboutPrompts() {
             </p>
           </div>
         </div>
-
+        <br /><br />
         <div>
               <p>
               we’ve covered six key prompt types: Zero-Shot, Few-Shot, Instruction, Role-Based, Chain-of-Thought, and Rewrite/Transform. 
