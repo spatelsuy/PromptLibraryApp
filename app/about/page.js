@@ -16,28 +16,20 @@ export default function AboutPrompts() {
       <section className="mb-10">
         <h3 className="text-2xl font-semibold mb-3">How to Learn Prompting</h3>
         <p className="mb-3">You can learn prompting by focusing on three things:</p>
-
-        <ul className="list-disc ml-6 space-y-2">
-          <li><strong>Be Clear:</strong> Tell the AI exactly what you want.</li>
-          <li><strong>Add Context:</strong> More background means better output.</li>
-          <li>
-            <strong>Give an Example (Optional):</strong> Examples guide the AI toward your preferred style.
-          </li>
-        </ul>
+          Be Clear: Tell the AI exactly what you want.<br />
+          Add Context: More background means better output.<br />
+          Give an Example (Optional): Examples guide the AI toward your preferred style. <br />
       </section>
 
       {/* What Makes a Good Prompt */}
       <section className="mb-10">
         <h3 className="text-2xl font-semibold mb-3">What Makes a Good Prompt?</h3>
         <p className="mb-3">A good prompt usually contains:</p>
-
-        <ul className="list-disc ml-6 space-y-2">
-          <li><strong>Role:</strong> For example, “Act as a cybersecurity analyst...”</li>
-          <li><strong>Goal:</strong> “Help me evaluate risks...”</li>
-          <li><strong>Context:</strong> Information the AI needs.</li>
-          <li><strong>Constraints:</strong> For example, “Keep it under 150 words.”</li>
-          <li><strong>Output format:</strong> Bullets, table, summary, etc.</li>
-        </ul>
+          Role: For example, Act as a cybersecurity analyst...<br />
+          Goal: Help me evaluate risks...<br />
+          Context: Information the AI needs.<br />
+          Constraints: For example, Keep it under 150 words.<br />
+          Output format: Bullets, table, summary, etc.<br />
       </section>
 
       {/* Types of Prompts */}
