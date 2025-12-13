@@ -58,15 +58,15 @@ export default function AboutPrompts() {
             <p>Rewrite the following messages in a professional tone. <br />
 
             Example 1:<br />
-            Input: "This is wrong. Fix it."<br />
-            Output: "There appears to be an issue. Could you please review and correct it?"<br />
+            Input: This is wrong. Fix it.<br />
+            Output: There appears to be an issue. Could you please review and correct it?<br />
             <br />
             Example 2:<br />
-            Input: "I need this now."<br />
-            Output: "Could you please prioritize this request at your earliest convenience?"<br />
+            Input: I need this now.<br />
+            Output: Could you please prioritize this request at your earliest convenience?<br />
             <br />
             Now rewrite this:<br />
-            Input: "Send the document today."<br />
+            Input: Send the document today.<br />
             </p>
           </div>
 
