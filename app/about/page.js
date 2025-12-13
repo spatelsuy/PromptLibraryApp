@@ -83,7 +83,12 @@ export default function AboutPrompts() {
 
           <div>
             <h3 className="text-xl font-semibold">4. Role-Based Prompt</h3>
-            <p>Assign the AI a role. Example: “Act as a project manager and review this plan.”</p>
+            <p>A Role-Based Prompt is a prompt where you explicitly tell the AI to act as a specific role or persona while performing the task.</p>
+            <p>Example: Act as a cybersecurity analyst. Explain the risks of using public Wi-Fi to a non-technical audience in 3 simple bullet points.</p>
+            <p>Note: Zero-Shot Only: Explain phishing attacks.<br />
+              Instruction Prompt + Zero-Shot: Explain phishing attacks to non-technical person in 3 bullet points. <br />
+              Role-Based + Instruction + Zero-Shot: Act as a cybersecurity trainer. Explain phishing attacks to non-technical employees in 3 simple bullet points.
+            </p>
           </div>
 
           <div>
