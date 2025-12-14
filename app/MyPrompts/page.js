@@ -502,6 +502,7 @@ export default function PromptsPage() {
                                         placeholder="Enter your prompt content here..."
                                       />
                                       {/* Format Button during Editing */}
+                                      /*
                                       <div className="flex justify-end">
                                         <button
                                           onClick={() => formatPromptWithAI(prompt.prompt_id, editedContent)}
@@ -521,6 +522,7 @@ export default function PromptsPage() {
                                           )}
                                         </button>
                                       </div>
+                                      */
                                     </div>
                                   ) : (
                                     /* Clean prompt content display */
