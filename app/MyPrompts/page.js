@@ -501,28 +501,6 @@ export default function PromptsPage() {
                                         className="w-full h-48 p-4 border border-gray-200 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
                                         placeholder="Enter your prompt content here..."
                                       />
-                                      {/* Format Button during Editing */}
-                                      /*
-                                      <div className="flex justify-end">
-                                        <button
-                                          onClick={() => formatPromptWithAI(prompt.prompt_id, editedContent)}
-                                          disabled={isFormatting || !editedContent.trim()}
-                                          className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-all duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
-                                        >
-                                          {isFormatting ? (
-                                            <>
-                                              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                                              <span>Formatting...</span>
-                                            </>
-                                          ) : (
-                                            <>
-                                              <span>✨</span>
-                                              <span>Format with AI</span>
-                                            </>
-                                          )}
-                                        </button>
-                                      </div>
-                                      */
                                     </div>
                                   ) : (
                                     /* Clean prompt content display */
