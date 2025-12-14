@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 
 export default function PromptsPage() {
+  const { data: session } = useSession();
   const [prompts, setPrompts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -161,6 +163,7 @@ export default function PromptsPage() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.idToken}` // send ID token for backend auth
         },
         body: JSON.stringify({
           prompt_text: editedContent,
